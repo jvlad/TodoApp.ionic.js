@@ -24,7 +24,7 @@
         });
     });
 
-    app.controller('TodoController', function ($scope, $ionicModal) {
+    app.controller('TodoController', function ($scope, $ionicModal, $ionicSideMenuDelegate) {
         // No need for testing data anymore
         var viewModel = this;
         viewModel.tasks = [
@@ -60,5 +60,10 @@
         viewModel.closeNewTask = function () {
             viewModel.taskModal.hide();
         };
+
+        viewModel.toggleProjects = function () {
+            $ionicSideMenuDelegate.toggleLeft();
+        };
     });
-})();
+})
+();
